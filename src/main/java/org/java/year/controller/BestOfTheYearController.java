@@ -14,7 +14,7 @@ public class BestOfTheYearController {
     @GetMapping("/")
     public String home(Model model) {
         String name = "Antonio Novelli";
-        model.addAttribute("name", "Best of the year by " + name);
+        model.addAttribute("name", "Best of the year by: " + name);
         return "index";
     }
 
