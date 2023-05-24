@@ -3,7 +3,7 @@ package org.java.year.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +54,35 @@ public class BestOfTheYearController {
         model.addAttribute("titoli", String.join(",", songTitles));
         return "songs";
     }
-
+    
+    //****************************************** dettagli *************************
+    
+    
+    
+    @GetMapping("/movies/{id}")
+    public String movieDetails(@PathVariable int id, Model model) {
+        List<Movie> movies = getBestMovies();
+        for (Movie movie : movies) {
+            if (movie.getId() == id) {
+                model.addAttribute("titolo", movie.getTitolo());
+                break;
+            }
+        }
+        return "movie-details";
+    }
+    
+    
+    @GetMapping("/songs/{id}")
+    public String songDetails(@PathVariable int id, Model model) {
+        List<Song> songs = getBestSongs();
+        for (Song song : songs) {
+            if (song.getId() == id) {
+                model.addAttribute("title", song.getTitolo());
+                break;
+            }
+        }
+        return "song-details";
+    }
     
     }
 
