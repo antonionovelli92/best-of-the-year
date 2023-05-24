@@ -77,7 +77,7 @@ public class BestOfTheYearController {
         List<Song> songs = getBestSongs();
         for (Song song : songs) {
             if (song.getId() == id) {
-                model.addAttribute("title", song.getTitolo());
+                model.addAttribute("titolo", song.getTitolo());
                 break;
             }
         }
