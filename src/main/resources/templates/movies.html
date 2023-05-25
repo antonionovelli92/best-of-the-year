@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Movies</title>
+   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <h1>Best Movies:</h1>
-    <p th:text="${titoli}"></p>
-    <a href="http://localhost:8080">Home</a>
+    <div th:replace="frag/header :: header"></div>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Best Movies</h1>
+        <ul class="list-group">
+            <li class="list-group-item" th:each="movie : ${movies}">
+                <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="${movie.titolo}"></a>
+            </li>
+        </ul>
+        <a class="btn btn-primary mt-3" href="/">Back to Home</a>
+    </div>
+
+    
 </body>
 </html>

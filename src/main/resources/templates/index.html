@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best of the Year</title>
+   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <h1 class="text-danger d-flex justify-content-center mt-2" th:text="${name}"></h1>
-    <div class="text-center mx-5 my-3"> 
-		<a class="text-decoration-none" href="http://localhost:8080/movies">Lista Film</a>
-		<a class="text-decoration-none" href="http://localhost:8080/songs">Lista Canzoni</a>
-	</div>
+    <header th:replace="frag/header :: header"></header>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Best of the Year</h1>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary mb-3" href="/movies">Best Movies</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary mb-3" href="/songs">Best Songs</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdev.to%2Fmadsstoumann%2Frandom-art-generator-dots-rings-3ca3&psig=AOvVaw1Dr7sQUCqW4X3zoIRUg0FI&ust=1685107034091000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKCQm4PHkP8CFQAAAAAdAAAAABAF" alt="Best of the Year Image" />
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat nisi quis nibh fringilla, id dictum sapien interdum. Donec ultrices tortor sed neque porta tristique. Duis consectetur, turpis eget aliquam efficitur, metus velit ultrices felis, vel feugiat eros metus ut justo. Quisque pellentesque pulvinar dolor nec semper. Vivamus ac volutpat ex. Ut at nunc aliquet, rhoncus turpis eget, dictum quam.</p>
+    </div>
+
+    <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

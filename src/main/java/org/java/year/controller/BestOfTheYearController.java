@@ -33,28 +33,44 @@ public class BestOfTheYearController {
         return songs;
     }
 
+//    @GetMapping("/movies")
+//    public String movies(Model model) {
+//        List<Movie> movies = getBestMovies();
+//        List<String> movieTitles = new ArrayList<>();
+//        for (Movie movie : movies) {
+//            movieTitles.add(movie.getTitolo());
+//        }
+//        model.addAttribute("titoli", String.join(",", movieTitles));
+//        return "movies";
+//    }
+    
     @GetMapping("/movies")
-    public String movies(Model model) {
+    public String getMovies(Model model) {
         List<Movie> movies = getBestMovies();
-        List<String> movieTitles = new ArrayList<>();
-        for (Movie movie : movies) {
-            movieTitles.add(movie.getTitolo());
-        }
-        model.addAttribute("titoli", String.join(",", movieTitles));
+        model.addAttribute("movies", movies);
         return "movies";
     }
 
+
+//    @GetMapping("/songs")
+//    public String songs(Model model) {
+//        List<Song> songs = getBestSongs();
+//        List<String> songTitles = new ArrayList<>();
+//        for (Song song : songs) {
+//            songTitles.add(song.getTitolo());
+//        }
+//        model.addAttribute("titoli", String.join(",", songTitles));
+//        return "songs";
+//    }
+//    
+    
     @GetMapping("/songs")
-    public String songs(Model model) {
+    public String getSongs(Model model) {
         List<Song> songs = getBestSongs();
-        List<String> songTitles = new ArrayList<>();
-        for (Song song : songs) {
-            songTitles.add(song.getTitolo());
-        }
-        model.addAttribute("titoli", String.join(",", songTitles));
+        model.addAttribute("songs", songs);
         return "songs";
     }
-    
+
     //****************************************** dettagli *************************
     
     
