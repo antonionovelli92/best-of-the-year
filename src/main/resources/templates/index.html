@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best of the Year</title>
    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <header th:replace="frag/header :: header"></header>
-
+    <th:block th:replace="frag/header :: header"></th:block >
     <div class="container mt-5">
         <h1 class="mb-4">Best of the Year</h1>
-        <div class="row">
-            <div class="col">
-                <a class="btn btn-primary mb-3" href="/movies">Best Movies</a>
-            </div>
-            <div class="col">
-                <a class="btn btn-primary mb-3" href="/songs">Best Songs</a>
-            </div>
-        </div>
         <div class="text-center">
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdev.to%2Fmadsstoumann%2Frandom-art-generator-dots-rings-3ca3&psig=AOvVaw1Dr7sQUCqW4X3zoIRUg0FI&ust=1685107034091000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKCQm4PHkP8CFQAAAAAdAAAAABAF" alt="Best of the Year Image" />
+           <img class="img-fluid"  th:src="@{https://wallpapercave.com/wp/wp7250087.jpg}" />
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat nisi quis nibh fringilla, id dictum sapien interdum. Donec ultrices tortor sed neque porta tristique. Duis consectetur, turpis eget aliquam efficitur, metus velit ultrices felis, vel feugiat eros metus ut justo. Quisque pellentesque pulvinar dolor nec semper. Vivamus ac volutpat ex. Ut at nunc aliquet, rhoncus turpis eget, dictum quam.</p>
     </div>

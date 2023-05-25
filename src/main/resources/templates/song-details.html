@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${movie.titolo}"></title>
+    <title th:text="${titolo}"></title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <div th:replace="frag/header :: header"></div>
+    <th:block th:replace="frag/header :: header"></th:block >
 
     <div class="container mt-5">
-        <h1 class="mb-4" th:text="${movie.titolo}"></h1>
+        <h1 class="mb-4" th:text="${titolo}"></h1>
         <a class="btn btn-primary mt-3" href="/movies">Back to Movies</a>
     </div>
 
-    <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
